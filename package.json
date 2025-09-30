@@ -1,0 +1,10 @@
+{
+
+  "scripts": {
+    "server" : "json-server --watch server.js --port 3333" 
+  },
+
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.21"
+  }
+}
