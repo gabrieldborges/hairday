@@ -4,7 +4,7 @@
   "author": "Gabriel Dantas",
   "scripts": {
     "server": "json-server --watch server.json --port 3333",
-    "build": "webpack",
+    "build": "webpack --watch",
     "dev": "webpack serve"
   },
   "dependencies": {
