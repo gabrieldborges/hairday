@@ -7,11 +7,11 @@ const hours = document.getElementById("hours");
 
 export function hoursLoad({ date }) {
   // Limpa a lista de horários
-  hours.innerHTML = {}
+  hours.innerHTML = "";
   const opening = openingHours.map((hour) => {
     // Recupera somente a hora
     const [scheduleHour] = hour.split(":");
-    console.log(scheduleHour)
+    console.log(scheduleHour);
 
     //Adiciona a hora no date e Verifica se a hora está no passado.
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isAfter(dayjs());
@@ -51,14 +51,16 @@ export function hoursLoad({ date }) {
       case "18:00":
         hourHeaderAdd("Noite");
         break;
+      default:
+        break;
     }
 
     hours.append(li);
 
     // console.log(li);
   });
-// Adiciona os eventos de click nos horários disponíveis
-  hoursClick()
+  // Adiciona os eventos de click nos horários disponíveis
+  hoursClick();
 }
 
 function hourHeaderAdd(title) {

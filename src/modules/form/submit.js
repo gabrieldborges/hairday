@@ -1,3 +1,4 @@
+import { scheduleNew } from "../../services/schedule-new";
 import dayjs from "dayjs";
 
 //Data atual
@@ -12,7 +13,7 @@ const clientName = document.getElementById("client");
 selectedDate.value = inputToday;
 selectedDate.min = inputToday;
 
-form.onsubmit = (event) => {
+form.onsubmit = async (event) => {
   event.preventDefault();
 
   try {
@@ -35,7 +36,7 @@ form.onsubmit = (event) => {
     console.log(when)
 
     const id = new Date().getTime()
-    console.log({
+    await scheduleNew({
       id,
       name,
       when
